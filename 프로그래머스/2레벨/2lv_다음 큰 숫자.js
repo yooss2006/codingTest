@@ -3,11 +3,7 @@ function one_count(num) {
     .toString(2)
     .split("")
     .reduce((rcc, v) => {
-      if (v === "1") {
-        return rcc + v * 1;
-      } else {
-        return rcc + 0;
-      }
+      return v === "1" ? rcc + v * 1 : rcc + 0;
     }, 0);
 }
 
