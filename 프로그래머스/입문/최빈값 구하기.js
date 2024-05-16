@@ -42,8 +42,9 @@ function solution(array) {
     (acc, cur) => ({ ...acc, [cur]: acc[cur] ? acc[cur] + 1 : 1 }),
     {}
   );
-  if (Object.entries(organized).length === 1) return array[0];
-  const sorted = Object.entries(organized).sort((a, b) => b[1] - a[1]);
+  const entries = Object.entries(organized);
+  if (entries.length === 1) return array[0];
+  const sorted = entries.sort((a, b) => b[1] - a[1]);
   if (sorted[0][1] === sorted[1][1]) return -1;
 
   return Number(sorted[0][0]);
